@@ -46,7 +46,40 @@ def gen_bin_tree(height: int, root: int):
             print("Julia's module with generating binary tree is succesfully imported")
         return tree 
 ```
+
 Затем я так же запустила activation_script.py и импортировала модуль:
 ![Удаленный импорт другого модуля](images/img-3.png)
 
-7) Был выполнен удаленный импорт с помощью хостинга GitHub. Ссылка на репозиторий с файлом модуля: https://github.com/julia1gin/testremotemodule
+7) Был выполнен удаленный импорт с помощью хостинга GitHub. Ссылка на репозиторий с файлом модуля: https://github.com/julia1gin/testremotemodule.
+
+Исходный код модуля:
+```
+def guess_number(number, nach, con):
+  '''
+  This function guesses the number and prints the guesses.
+
+  Parameters:
+  number (int): the number to guess
+  nach (int): the number of guesses
+  con (bool): the condition to break the loop
+  '''
+  
+  attempts = 0
+  guessed = 0
+  
+  while nach != con:
+    m = (nach + con) // 2
+    attempts += 1
+    if m < number:
+      nach = m + 1
+    else:
+      con = m
+  
+  guessed = nach
+  print(f"Вы загадали число {guessed} и оно было отгадано за {attempts} попыток")
+```
+
+Результат удаленного импорта с хостинга GitHub:
+![Удаленный импорт с хостинга](images/img-4.png)
+
+8) Также было переписано содержимое функции url_hook, класса URLLoader с помощью модуля requests. Старый код находится в комментариях, а переписанный активен.
