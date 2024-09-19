@@ -48,3 +48,5 @@ def gen_bin_tree(height: int, root: int):
 ```
 Затем я так же запустила activation_script.py и импортировала модуль:
 ![Удаленный импорт другого модуля](images/img-3.png)
+
+7) Был выполнен удаленный импорт с помощью хостинга GitHub. Ссылка на репозиторий с файлом модуля: https://github.com/julia1gin/testremotemodule
